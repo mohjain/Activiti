@@ -108,7 +108,7 @@
       <name>Spring Milestones</name>
       <url>https://repo.spring.io/libs-milestone</url>
       <snapshots>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
       </snapshots>
     </repository>
     <repository> <!-- Using snapshot repo to temporarily keep keycloak adapter -->
@@ -177,6 +177,11 @@
       <dependency>
         <groupId>org.activiti</groupId>
         <artifactId>activiti-services-rest</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.activiti</groupId>
+        <artifactId>activiti-services-identity-keycloak</artifactId>
         <version>${project.version}</version>
       </dependency>
 
