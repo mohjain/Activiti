@@ -1,4 +1,7 @@
 language: java 
+sudo: required
+services:
+  - docker
 jdk:
   - oraclejdk8
 notifications:
@@ -9,6 +12,9 @@ notifications:
     on_failure: always  # options: [always|never|change] default: always
     on_start: never     # options: [always|never|change] default: always
 
+before_install:
+- docker pull rabbitmq:management
+- docker run -d -p "5672:5672" -p "15672:15672" rabbitmq:management
 # Enable integration tests
 script:
   - mvn verify -B
